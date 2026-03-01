@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -12,15 +13,21 @@ body {
 }
 
 .page {
-  max-width: 720px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 6rem 2rem;
 }
 
 /* HERO */
 .hero {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 6rem;
   margin-bottom: 10rem;
+}
+
+.hero-text {
+  flex: 1;
 }
 
 .hero h1 {
@@ -33,6 +40,14 @@ body {
   margin-top: 3rem;
   color: #bfbfbf;
   letter-spacing: 1px;
+}
+
+/* HERO IMAGE */
+.hero-image img {
+  width: 260px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 36px;
 }
 
 /* SECTIONS */
@@ -77,18 +92,33 @@ p {
 }
 
 /* CONTACT */
+.contact {
+  position: relative;
+}
+
 .contact p {
   line-height: 2;
 }
 
+/* FISH IMAGE */
+.fish-image {
+  margin-top: 5rem;
+}
+
+.fish-image img {
+  width: 120px;
+  opacity: 0.9;
+}
+
 /* RESPONSIVE */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.4rem;
-    letter-spacing: 6px;
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
   }
 
-  h2 {
-    font-size: 2rem;
+  .hero-image img {
+    width: 220px;
+    height: 300px;
   }
 }
