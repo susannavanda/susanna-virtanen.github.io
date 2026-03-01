@@ -9,7 +9,7 @@
 body {
   background: #000;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Arial', Helvetica, sans-serif;
   line-height: 1.6;
 }
 
@@ -17,71 +17,177 @@ body {
 .hero {
   display: flex;
   align-items: center;
-  gap: 4rem;
-  padding: 5rem;
+  gap: 6rem;
+  padding: 4rem 5rem;
+  min-height: 60vh;
+}
+
+.hero-image {
+  flex-shrink: 0;
 }
 
 .hero-image img {
-  width: 280px;
-  height: 380px;
+  width: 200px;
+  height: 280px;
   object-fit: cover;
-  border-radius: 24px;
+  border-radius: 32px;
+  border: 2px solid #fff;
+}
+
+.hero-content {
+  flex: 1;
 }
 
 .hero-content h1 {
-  font-size: 2.6rem;
-  letter-spacing: 3px;
+  font-size: 3.5rem;
+  letter-spacing: 8px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.hero-content .spiral {
+  margin: 2rem 0;
 }
 
 .hero-content p {
   margin-top: 2rem;
   color: #ccc;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  line-height: 1.8;
 }
 
 /* SECTIONS */
 .section {
-  padding: 6rem 5rem;
+  padding: 5rem;
 }
 
 h2 {
-  font-size: 2.2rem;
-  letter-spacing: 3px;
-  margin-bottom: 3rem;
+  font-size: 3rem;
+  letter-spacing: 4px;
+  margin-bottom: 4rem;
+  font-weight: 900;
 }
 
 /* TYÖHISTORIA */
+.work-section {
+  padding-bottom: 8rem;
+}
+
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.work {
+  margin-bottom: 2rem;
+}
+
+.work-1 {
+  margin-right: auto;
+  max-width: 400px;
+}
+
+.work-2 {
+  margin-left: 20%;
+  max-width: 400px;
+}
+
+.work-3 {
+  margin-left: auto;
+  margin-right: 0;
+  text-align: right;
+  max-width: 400px;
 }
 
 .work h3 {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
 }
 
-.work span {
-  color: #aaa;
-  font-size: 0.9rem;
+.work p {
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  color: #ccc;
 }
 
 /* TAIDOT */
 .skills {
   display: flex;
-  gap: 4rem;
-  align-items: center;
+  gap: 6rem;
+  align-items: flex-start;
+  padding: 5rem;
+}
+
+.spiral-vertical-container {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.skills-content {
+  flex: 1;
+}
+
+.skills-content h2 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
 }
 
 .skills-content p {
-  margin-bottom: 0.6rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+  color: #ccc;
+}
+
+.skills-content p:first-of-type {
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.skills-software {
+  color: #fff !important;
+  font-weight: 900 !important;
+  font-size: 1.1rem !important;
+  margin-top: 2rem !important;
 }
 
 /* YHTEYSTIEDOT */
+.contact {
+  text-align: center;
+  padding: 5rem;
+}
+
+.contact h2 {
+  margin-bottom: 4rem;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: 4rem;
+  margin-bottom: 4rem;
   text-align: center;
+}
+
+.contact-item h4 {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  font-weight: 900;
+}
+
+.contact-item p,
+.contact-item a {
+  color: #ccc;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
 }
 
 .contact a {
@@ -89,46 +195,72 @@ h2 {
   text-decoration: underline;
 }
 
+.contact a:hover {
+  text-decoration: none;
+}
+
 /* SPIRAALIT */
 .spiral {
-  border: 1px solid #fff;
-  opacity: 0.6;
+  border: 2px solid #fff;
+  opacity: 0.8;
   border-radius: 50%;
 }
 
 .spiral.horizontal {
-  width: 160px;
-  height: 70px;
+  width: 200px;
+  height: 80px;
   transform: rotate(90deg);
   margin: 2rem 0;
 }
 
 .spiral.horizontal.right {
   margin-left: auto;
+  margin-right: 0;
 }
 
 .spiral.vertical {
-  width: 120px;
-  height: 300px;
+  width: 100px;
+  height: 350px;
+  margin: 0 auto;
 }
 
 /* KALA */
 .fish {
   text-align: center;
-  margin-top: 4rem;
-  font-size: 2.5rem;
+  margin-top: 3rem;
+  font-size: 3rem;
 }
 
 /* RESPONSIVE */
-@media (max-width: 900px) {
-  .hero,
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
   .skills {
     flex-direction: column;
     text-align: center;
   }
 
-  .work-grid,
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-1,
+  .work-2,
+  .work-3 {
+    margin: 0 !important;
+    text-align: center !important;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
